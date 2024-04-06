@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Upload</title>
+</head>
+<body>
+    <h1>Upload a PDF Document</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="pdf_file" accept=".pdf">
+        <input type="submit" value="Upload">
+    </form>
+    <div>
+        <h2>Summary:</h2>
+        <p>{{ summary }}</p>
+    </div>
+    <div>
+        <h2>Keywords:</h2>
+        <ul>
+            {% for keyword in keywords %}
+                <li>{{ keyword }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
